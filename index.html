@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibra Memories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Password Protection Section -->
+    <div id="password-protection" class="password-section">
+        <div class="password-container">
+            <h1><i class="fas fa-heart"></i> Album Kenangan</h1>
+            <p class="password-subtitle">Masukkin passwordnya dulu</p>
+            <div class="password-input-group">
+                <input type="password" id="password-input" placeholder="Tanggal Jadian">
+                <button id="password-submit"><i class="fas fa-lock-open"></i> Buka Album</button>
+            </div>
+            <p id="password-message" class="password-message"></p>
+        </div>
+        <div class="floating-hearts"></div>
+    </div>
+
+    <!-- Main Content (Hidden until password is correct) -->
+    <div id="main-content" class="hidden">
+        <!-- Header & Navigation -->
+        <header class="main-header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <h1><i class="fas fa-heart"></i>Our Memories</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Beranda</a></li>
+                    <li><a href="#countdown" class="nav-link"><i class="fas fa-clock"></i> Countdown</a></li>
+                    <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Album Foto</a></li>
+                    <li><a href="#flipbook" class="nav-link"><i class="fas fa-book-open"></i> Buku Kenangan</a></li>
+                    <li><a href="#guestbook" class="nav-link"><i class="fas fa-book"></i> Pesan</a></li>
+                    <li><a href="#quotes" class="nav-link"><i class="fas fa-quote-right"></i> Quotes</a></li>
+                </ul>
+                <div class="music-control">
+                    <button id="music-toggle" class="music-btn">
+                        <i class="fas fa-play" id="music-icon"></i>
+                        <span id="music-text">Putar Musik</span>
+                    </button>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="home-container">
+                <div class="home-text parallax-element">
+                    <h2 class="home-title">Selamat Datang di <span class="highlight">Album Kenangan Kita</span></h2>
+                    <p class="home-subtitle">momen kita yang abadi di website ini</p>
+                    <p class="home-description">Website ini tempat khusus buat nyimpen semua kenangan kita, sayang banget fotonya pada ilang jadi cuma dikit:(</p>
+                    <div class="home-buttons">
+                        <a href="#gallery" class="btn-primary"><i class="fas fa-images"></i> Foto-Foto Kita</a>
+                        <a href="#flipbook" class="btn-secondary"><i class="fas fa-book-open"></i> Our Journey</a>
+                    </div>
+                </div>
+                <div class="home-image parallax-element">
+                    <div class="image-frame">
+                        <div class="main-image"></div>
+                        <div class="image-decoration">
+                            <div class="decoration-circle c1"></div>
+                            <div class="decoration-circle c2"></div>
+                            <div class="decoration-circle c3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section id="countdown" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Menuju Hari Spesial Kita</h2>
+                <p class="section-subtitle">Ga Kerasa Udah Sejauh Ini Tiba-Tiba Aja Udah Mau 1 Tahun:'</p>
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+            <div class="countdown-date">
+                <p><i class="fas fa-calendar-heart"></i> Menuju: <span id="target-date">11 Januari 2026 (Anniversary 1 Tahun)</span></p>
+            </div>
+        </section>
+
+        <!-- Gallery Section - 16 FOTO -->
+        <section id="gallery" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Album Kenangan Kita</h2>
+                <p class="section-subtitle"> momen berharga yang abadi dalam gambar</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="gallery-slider">
+                    <!-- Foto 1-16 -->
+                    <div class="slide">
+                        <div class="slide-image" data-title="First Meet" data-description="Pertemuan yang memulai semuanya tentang kita">
+                            <img src="img/memory1.jpg" alt="Kenangan Pertama">
+                            <div class="image-overlay">
+                                <h3>First Meet</h3>
+                                <p>Pertemuan yang memulai semuanya tentang kita</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Rainn Date" data-description="Kejebak hujan di MCD wwkakwkak">
+                            <img src="img/memory2.jpg" alt="Perjalanan Bersama">
+                            <div class="image-overlay">
+                                <h3>Rainn Date</h3>
+                                <p>Kejebak hujan di MCD wwkakwkak</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Gangster" data-description="Asik banget sama lu, bisa nunjukin sisi gangster gua">
+                            <img src="img/memory3.jpg" alt="Senyuman Terindah">
+                            <div class="image-overlay">
+                                <h3>Gangster</h3>
+                                <p>Asik banget sama lu, bisa nunjukin sisi gangster gua</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Warkop 2 Lantai" data-description="Malem-malem pulsek bingung mau kemana hahaa">
+                            <img src="img/memory4.jpg" alt="Momen Spesial">
+                            <div class="image-overlay">
+                                <h3>Warkop 2 Lantai</h3>
+                                <p>Malem-malem pulsek bingung mau kemana hahaa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Malam Takbiran" data-description="MALAM TERGEMASHH TERLUCUUUU">
+                            <img src="img/memory5.jpg" alt="Kebersamaan">
+                            <div class="image-overlay">
+                                <h3>Malam Takbiran</h3>
+                                <p>MALAM TERGEMASHH TERLUCUUUU</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Rumerr" data-description="Lucu banget ya inii, cantik bangett">
+                            <img src="img/memory6.jpg" alt="Petualangan Cinta">
+                            <div class="image-overlay">
+                                <h3>Rumerr</h3>
+                                <p>Lucu banget ya inii, cantik bangett</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="CANTIKK BANGETTT" data-description="Cantik banget lu disini jujur glglglgl">
+                            <img src="img/memory7.jpg" alt="Kejutan Manis">
+                            <div class="image-overlay">
+                                <h3>CANTIKK BANGETTT</h3>
+                                <p>Cantik banget lu disini jujur glglglgl</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Photobox" data-description="Ini Photobox yang kesekian kalinya, mumpung lagi gondrong">
+                            <img src="img/memory8.jpg" alt="Bahagia Sederhana">
+                            <div class="image-overlay">
+                                <h3>Photobox</h3>
+                                <p>Ini Photobox yang kesekian kalinya, mumpung lagi gondrong</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="TIARAA BIRTHDAYYY" data-description="ULANG TAHUN KAMU SAYANGKU CINTAKUUUUU LOVEEE">
+                            <img src="img/memory9.jpg" alt="Hari Bahagia">
+                            <div class="image-overlay">
+                                <h3>TIARAA BIRTHDAYYY</h3>
+                                <p>ULANG TAHUN KAMU SAYANGKU CINTAKUUUUU LOVEEE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="K!NG NAUFHAL BIRTHDAYYY" data-description="Sekarang ulang tahun akuu, MAKASIII YAAAA SAYAANGGGG">
+                            <img src="img/memory10.jpg" alt="Malam Romantis">
+                            <div class="image-overlay">
+                                <h3>K!NG NAUFHAL BIRTHDAYYY</h3>
+                                <p>Sekarang ulang tahun akuu, MAKASIII YAAAA SAYAANGGGG</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="BTM" data-description="Berapa kali tau kesini gabut">
+                            <img src="img/memory11.jpg" alt="Liburan Bersama">
+                            <div class="image-overlay">
+                                <h3>BTM</h3>
+                                <p>Berapa kali tau kesini gabut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Jus Antara" data-description="Ngejus, Ngees, Masang stiker gemasshhh">
+                            <img src="img/memory12.jpg" alt="Momen Santai">
+                            <div class="image-overlay">
+                                <h3>Jus Antara</h3>
+                                <p>Ngejus, Ngees, Masang stiker gemasshhh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image" data-title="Vultruszzzz" data-description="Main Ps Sambil Ngopss🤫">
+                            <img src="img/memory13.jpg" alt="Celebration">
+                            <div class="image-overlay">
+                                <h3>Vultruszzzz</h3>
+                                <p>Main Ps Sambil Ngopss🤫</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="gallery-indicators">
+                    <!-- Indicators akan ditambahkan melalui JavaScript -->
+                </div>
+            </div>
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                    <span class="lightbox-close">&times;</span>
+                    <img class="lightbox-image" src="" alt="">
+                    <div class="lightbox-caption"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flipbook Section - 10 Halaman -->
+        <section id="flipbook" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Buku Kenangan Kita</h2>
+                <p class="section-subtitle">gambar-gambar yang penuh dengan kenangan indah kita</p>
+            </div>
+            <div class="flipbook-container">
+                <div class="flipbook-controls">
+                    <button class="flipbook-btn prev-page-btn"><i class="fas fa-chevron-left"></i> Halaman Sebelumnya</button>
+                    <div class="page-counter">
+                        Halaman: <span id="current-page">1</span> / <span id="total-pages">10</span>
+                    </div>
+                    <button class="flipbook-btn next-page-btn">Halaman Berikutnya <i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <!-- Flipbook Sederhana - 10 Halaman -->
+                <div class="simple-flipbook">
+                    <div class="book-page active" id="page-1">
+                        <div class="page-content">
+                            <div class="page-number">1</div>
+                            <h3>Halaman 1: First Meet</h3>
+                            <p>Di sini cerita kita dimulai, dengan senyuman pertama, tawa pertama, dan perasaan hangat yang tumbuh di antara kita.</p>
+                            <div class="page-image">
+                                <img src="img/book1.jpg" alt="Awal Cerita">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-2">
+                        <div class="page-content">
+                            <div class="page-number">2</div>
+                            <h3>Halaman 2: First Date</h3>
+                            <p>Perjalanan pertama kita, foto ini menjadi bukti dimulainya hubungan kita berdua.</p>
+                            <div class="page-image">
+                                <img src="img/book2.jpg" alt="Kenangan Pertama">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-3">
+                        <div class="page-content">
+                            <div class="page-number">3</div>
+                            <h3>Halaman 3: Buka Bersama</h3>
+                            <p>Buka puasa bersama karena kamu sendiri di rumah, pengen banget jauh dari sebelum ini ngajak kamu kesini nyobain mie nyemeknyaaa.</p>
+                            <div class="page-image">
+                                <img src="img/book3.jpg" alt="Petualangan Bersama">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-4">
+                        <div class="page-content">
+                            <div class="page-number">4</div>
+                            <h3>Halaman 4: First Photobox</h3>
+                            <p>Ini merupakan photobox pertama dalam hidup aku dan photobox pertama dalam hubungan kita.</p>
+                            <div class="page-image">
+                                <img src="img/book4.jpg" alt="Momen Spesial">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-5">
+                        <div class="page-content">
+                            <div class="page-number">5</div>
+                            <h3>Halaman 5: Family Mart</h3>
+                            <p>Kesini cuma buat nunggu ps kosong doang wkwk, cantik kamunyaa lucuuukkk.</p>
+                            <div class="page-image">
+                                <img src="img/book5.jpg" alt="Kebersamaan Sehari-hari">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-6">
+                        <div class="page-content">
+                            <div class="page-number">6</div>
+                            <h3>Halaman 6: Main Terjauh Kita</h3>
+                            <p>Photoboxx tapi yg ini bedaa karena gatau mau kemana akhirnya muter-muter sampe ke cibinong wwkwk, photobox di CCM.</p>
+                            <div class="page-image">
+                                <img src="img/book6.jpg" alt="Kejutan Manis">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-7">
+                        <div class="page-content">
+                            <div class="page-number">7</div>
+                            <h3>Halaman 7:Ulang Tahun Kamu</h3>
+                            <p>11-04-2025 hari dimana kamu berulang tahun yang ke 16, dan hari dimana pertama kalinya juga aku ngesurprisein orang yang aku sayang.</p>
+                            <div class="page-image">
+                                <img src="img/book7.jpg" alt="Pelukan dan Dukungan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-8">
+                        <div class="page-content">
+                            <div class="page-number">8</div>
+                            <h3>Halaman 8: Rain Date</h3>
+                            <p>Hujan-hujanan lagieee tapi yang ini beda ga make jas ujan kresek biasanya wkwwk, lg dan lg habis photobox.</p>
+                            <div class="page-image">
+                                <img src="img/book8.jpg" alt="Tawa dan Kegembiraan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-9">
+                        <div class="page-content">
+                            <div class="page-number">9</div>
+                            <h3>Halaman 9: Ulang Tahun Akuu</h3>
+                            <p>Ini aku bener-bener ga nyangka HAHAHAHA pertama kalinya dalam hidup disurprisein kaya giniiii. IM SO TO LUCKY HAVE YOU❤️.</p>
+                            <div class="page-image">
+                                <img src="img/book9.jpg" alt="Impian Bersama">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-page" id="page-10">
+                        <div class="page-content">
+                            <div class="page-number">10</div>
+                            <h3>Halaman 10: Datengin Kamu Narii</h3>
+                            <p>Gatau pengen aja masukin foto ini, karena lucuu bangettt foto terlucu yg difotoin, PROUD OF YOU SAYANGGG, biarpun aslinya gasuka bajunya kebuka humss...</p>
+                            <div class="page-image">
+                                <img src="img/book10.jpg" alt="Cinta yang Terus Tumbuh">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guestbook Section -->
+        <section id="guestbook" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Tinggalin Pesan Disini</h2>
+                <p class="section-subtitle">Tinggalkan pesan manis untuk kita</p>
+            </div>
+            <div class="guestbook-container">
+                <div class="guestbook-form">
+                    <h3><i class="fas fa-pen"></i> Tulis Pesan</h3>
+                    <form id="message-form">
+                        <div class="form-group">
+                            <input type="text" id="guest-name" placeholder="Nama kamu" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="guest-message" placeholder="Tulis pesan manismu di sini..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+                    </form>
+                </div>
+                <div class="guestbook-messages">
+                    <h3><i class="fas fa-heart"></i> Pesan dari pengunjung web</h3>
+                    <div id="messages-container">
+                        <div class="message-card">
+                            <div class="message-header">
+                                <h4>Ibra For Tiara</h4>
+                                <span class="message-date">Hari ini</span>
+                            </div>
+                            <p class="message-content">Selamat datang di album kenangan kita sayangg, Ini aku buat cuma iseng aja buat kenangan kita, makasih udah ada di hidup aku loaffyuuu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section id="quotes" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Kata-kata Cinta</h2>
+                <p class="section-subtitle">Gatau ini belum diganti, bingung</p>
+            </div>
+            <div class="quotes-container">
+                <div class="quote-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="quote-text" id="quote-text">Cinta sejati tidak buta - itu melihat lebih banyak, bukan kurang. Tetapi karena melihat lebih banyak, itu bersedia melihat lebih sedikit.</p>
+                    <div class="quote-controls">
+                        <button id="next-quote" class="btn-secondary"><i class="fas fa-redo"></i> Kutipan Lainnya</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-heart"></i> Album Kenangan Kita</h3>
+                    <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff0037;"></i> untuk mengabadikan setiap momen indah bersama.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Beranda</a>
+                    <a href="#gallery">Album Foto</a>
+                    <a href="#flipbook">Buku Kenangan</a>
+                    <a href="#guestbook">Tulis Pesan</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year">2025</span> - Dibuat khusus untuk kita berdua</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tombol Rahasia -->
+    <div id="secret-btn" class="secret-btn">
+        <i class="fas fa-gift"></i>
+    </div>
+
+    <!-- Pesan Rahasia -->
+    <div id="secret-message" class="secret-message hidden">
+        <div class="secret-content">
+            <span class="secret-close">&times;</span>
+            <h2><i class="fas fa-heart"></i> For You</h2>
+            <div class="secret-text">
+                <p>Sayangku mutiara dwi fauziah,</p>
+                <p>Makasiii banyakk udah jadi bagian terindah dalam hidup akuuu. kamu orang yg bener-bener gabisa aku temuin di orang lain, karena cuma sama kamu aku bisa jadi diri aku sendiri, maaf aku masih banyak salah ke kamu belum bisa jadi yg terbaik buat kamuu.</p>
+                <p>Semoga dari website kecil ini bisa menjadi saksi hubungan kita berdua, aku bener-bener sayaaannnggg sama kamu, bener-bener cintaa sama kamuu. kalo suatu saat hubungan kita bener-bener berakhir aku gabakal lupain kamu sebagai first experience akuu!!.
+                     Makasii sayaangggg I Love Youu❤️</p>
+                <p class="signature">- Ibrahim Naufhal -</p>
+            </div>
+            <div class="secret-hearts">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="background-music" loop>
+        <source src="music/romantic-music.mp3" type="audio/mpeg">
+        <source src="music/romantic-music.ogg" type="audio/ogg">
+        
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
